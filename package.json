@@ -4,8 +4,11 @@
   "description": "test application",
   "main": "server.js",
   "scripts": {
+    "client-install": "npm install --prefix client",
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Andrew McKelvey",
   "license": "ISC",
@@ -21,6 +24,14 @@
     "validator": "^10.4.0"
   },
   "devDependencies": {
-    "nodemon": "^1.17.5"
-  }
+    "nodemon": "^1.18.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amckelvey5/TestA.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amckelvey5/TestA/issues"
+  },
+  "homepage": "https://github.com/amckelvey5/TestA#readme"
 }

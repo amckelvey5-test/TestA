@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const ping = require("./routes/api/ping");
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
 const posts = require("./routes/api/posts");
@@ -29,6 +30,7 @@ app.use(passport.initialize());
 require("./config/passport.js")(passport);
 
 // Use routes
+app.use("/api/ping", ping);
 app.use("/api/users", users);
 app.use("/api/profile", profile);
 app.use("/api/posts", posts);
